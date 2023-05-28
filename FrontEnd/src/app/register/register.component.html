@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2 class="text-center my-4">Registration</h2>
+
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input
+          #name
+         
+          type="text"
+          class="form-control"
+          placeholder="Enter your full name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input
+          #email
+          type="email"
+          class="form-control"
+          placeholder="Enter your email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input
+          #number
+          type="tel"
+          class="form-control"
+          placeholder="Enter your phone number"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          #password
+          [(ngModel)]="pass"
+          type="password"
+          class="form-control"
+          placeholder="Enter a password"
+        />
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input
+        [(ngModel)]="cpass"
+          type="password"
+          class="form-control"
+          placeholder="Confirm your password"
+        />
+      </div>
+      <button
+        (click)="
+          registerUser(name.value, email.value, number.value, password.value)
+        "
+        type="submit"
+        class="btn btn-primary btn-block"
+        [disabled]="pass !== cpass"
+      >
+        Register
+      </button>
+      <div *ngIf="pass !== cpass" class="alert alert-danger">Passwords do not match.</div>
+  
+      <div class="text-center mt-3">
+        <p>Already have an account? <a routerLink="">Login</a></p>
+      </div>
+    </div>
+  </div>
+</div>

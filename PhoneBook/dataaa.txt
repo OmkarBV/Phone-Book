@@ -1,0 +1,46 @@
+-- Insert 5 users
+INSERT INTO User (number, email, name, password)
+VALUES
+    ('1234567890', 'john.doe@example.com', 'John Doe', 'password1'),
+    ('2345678901', 'jane.smith@example.com', 'Jane Smith', 'password2'),
+    ('3456789012', 'robert.johnson@example.com', 'Robert Johnson', 'password3'),
+    ('4567890123', 'emily.davis@example.com', 'Emily Davis', 'password4'),
+    ('5678901234', 'michael.wilson@example.com', 'Michael Wilson', 'password5');
+
+-- Add 5 contacts for each user
+INSERT INTO Contact (number, email, name, photo, user_number)
+VALUES
+    -- User 1 Contacts
+    ('1001001001', 'sarah.johnson@example.com', 'Sarah Johnson', 'contact1.jpg', '1234567890'),
+    ('1002001002', 'david.smith@example.com', 'David Smith', 'contact2.jpg', '1234567890'),
+    ('1003001003', 'jennifer.lee@example.com', 'Jennifer Lee', 'contact3.jpg', '1234567890'),
+    ('1004001004', 'daniel.brown@example.com', 'Daniel Brown', 'contact4.jpg', '1234567890'),
+    ('1005001005', 'sophia.wilson@example.com', 'Sophia Wilson', 'contact5.jpg', '1234567890'),
+
+    -- User 2 Contacts
+    ('2001002001', 'william.davis@example.com', 'William Davis', 'contact1.jpg', '2345678901'),
+    ('2002002002', 'olivia.johnson@example.com', 'Olivia Johnson', 'contact2.jpg', '2345678901'),
+    ('2003002003', 'james.smith@example.com', 'James Smith', 'contact3.jpg', '2345678901'),
+    ('2004002004', 'ava.anderson@example.com', 'Ava Anderson', 'contact4.jpg', '2345678901'),
+    ('2005002005', 'liam.martin@example.com', 'Liam Martin', 'contact5.jpg', '2345678901'),
+
+    -- User 3 Contacts
+    ('3001003001', 'benjamin.wilson@example.com', 'Benjamin Wilson', 'contact1.jpg', '3456789012'),
+    ('3002003002', 'emma.davis@example.com', 'Emma Davis', 'contact2.jpg', '3456789012'),
+    ('3003003003', 'alexander.johnson@example.com', 'Alexander Johnson', 'contact3.jpg', '3456789012'),
+    ('3004003004', 'mia.smith@example.com', 'Mia Smith', 'contact4.jpg', '3456789012'),
+    ('3005003005', 'ethan.thompson@example.com', 'Ethan Thompson', 'contact5.jpg', '3456789012'),
+
+    -- User 4 Contacts
+    ('4001004001', 'charlotte.wilson@example.com', 'Charlotte Wilson', 'contact1.jpg', '4567890123'),
+    ('4002004002', 'noah.davis@example.com', 'Noah Davis', 'contact2.jpg', '4567890123'),
+    ('4003004003', 'amelia.johnson@example.com', 'Amelia Johnson', 'contact3.jpg', '4567890123'),
+    ('4004004004', 'henry.smith@example.com', 'Henry Smith', 'contact4.jpg', '4567890123'),
+    ('4005004005', 'sophia.anderson@example.com', 'Sophia Anderson', 'contact5.jpg', '4567890123'),
+
+    -- User 5 Contacts
+    ('5001005001', 'james.wilson@example.com', 'James Wilson', 'contact1.jpg', '5678901234'),
+    ('5002005002', 'abigail.davis@example.com', 'Abigail Davis', 'contact2.jpg', '5678901234'),
+    ('5003005003', 'emma.thompson@example.com', 'Emma Thompson', 'contact3.jpg', '5678901234'),
+    ('5004005004', 'daniel.johnson@example.com', 'Daniel Johnson', 'contact4.jpg', '5678901234'),
+    ('5005005005', 'mia.martin@example.com', 'Mia Martin', 'contact5.jpg', '5678901234');
