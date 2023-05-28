@@ -1,5 +1,5 @@
 # Phone-Book
-Technologies used:
+#Technologies used:
 -Java: Java is used to develop the backend of the application.
 
 -MySQL: MySQL is used to store the data.
