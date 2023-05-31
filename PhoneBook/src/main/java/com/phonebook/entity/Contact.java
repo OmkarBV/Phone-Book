@@ -14,6 +14,7 @@ public class Contact {
 	private String number;
 	private String name;
 	private String email;
+	private String group;
 	private byte[] photo;
 	@ManyToOne
 	@JsonIgnore
@@ -59,9 +60,18 @@ public class Contact {
 		this.photo = photo;
 	}
 
+	public String getGroup() {
+		return group;
+	}
+
+	public void setGroup(String group) {
+		this.group = group;
+	}
+
 	@Override
 	public String toString() {
-		return "Contact [number=" + number + ", name=" + name + ", email=" + email + ", photo=" + Arrays.toString(photo)
-				+ ", user=" + user + "]";
+		return "Contact [number=" + number + ", name=" + name + ", email=" + email + ", group=" + group + ", photo="
+				+ Arrays.toString(photo) + "]";
 	}
+
 }

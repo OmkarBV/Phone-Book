@@ -1,5 +1,6 @@
 package com.phonebook.entity;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -15,13 +16,22 @@ public class User {
 	private String email;
 	private String name;
 	private String password;
+	private byte[] photo;
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<Contact> contact;
 
+	public byte[] getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(byte[] photo) {
+		this.photo = photo;
+	}
+
 	@Override
 	public String toString() {
-		return "User [number=" + number + ", email=" + email + ", name=" + name + ", password=" + password
-				+ ", contact=" + contact + "]";
+		return "User [number=" + number + ", email=" + email + ", name=" + name + ", password=" + password + ", photo="
+				+ Arrays.toString(photo) + ", contact=" + contact + "]";
 	}
 
 	public List<Contact> getContact() {
