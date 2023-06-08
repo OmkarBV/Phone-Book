@@ -19,6 +19,8 @@ public class AuthenticateController {
 	@Autowired
 	AuthenticateService service;
 
+	
+
 	@PostMapping("/login")
 	public Map<String, Object> userLogin(@RequestBody User user) {
 		System.out.println(user);

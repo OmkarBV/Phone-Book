@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
         this.responce = responce;
         console.log(this.responce);
         if (this.responce.success === true) {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/home', this.user.email]);
         }
       },
       (error) => {

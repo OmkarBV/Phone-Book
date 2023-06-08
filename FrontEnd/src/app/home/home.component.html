@@ -1,1 +1,109 @@
-<p>home works!</p>
+<div class="container">
+  <div class="jumbotron text-center">
+    <h1>Phone Book</h1>
+    <p>Welcome to our phone book website!</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-header">Search</div>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="nameSearch">Search by Name:</label>
+              <input #name type="text" class="form-control" id="nameSearch" />
+            </div>
+            <button
+              (click)="searchByName(name.value)"
+              type="submit"
+              class="btn btn-primary"
+            >
+              Search
+            </button>
+            <div class="form-group">
+              <label for="numberSearch">Search by Number:</label>
+              <input
+                #number
+                type="text"
+                class="form-control"
+                id="numberSearch"
+              />
+            </div>
+            <button
+              (click)="searchByNumber(number.value)"
+              type="submit"
+              class="btn btn-primary"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-header">Sort Order</div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="sortOrder">Sort Order:</label>
+            <select class="form-control" id="sortOrder">
+              <option>Ascending</option>
+              <option>Descending</option>
+            </select>
+          </div>
+          <button class="btn btn-primary">Apply Sort</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-header">Profile</div>
+        <div class="card-body">
+          <h5 class="card-title">Name: {{ user.name }}</h5>
+          <p class="card-text">Phone: {{ user.number }}</p>
+          <p class="card-text">Email: {{ user.email }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card mb-4">
+        <div class="card-header">Phone Book Entries</div>
+        <div class="card-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let c of user.contact">
+                <td>{{ c.name }}</td>
+                <td>{{ c.number }}</td>
+                <td>{{ c.email }}</td>
+                <td>
+                  <button class="btn btn-primary btn-sm edit-btn">Edit</button>
+                  <button class="btn btn-danger btn-sm">Delete</button>
+                  <button
+                    class="btn btn-success btn-sm save-btn"
+                    style="display: block"
+                  >
+                    Save
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
