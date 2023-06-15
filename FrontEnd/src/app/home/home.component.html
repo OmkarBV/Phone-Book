@@ -48,13 +48,12 @@
         <div class="card-body">
           <div class="form-group">
             <label for="sortOrder">Sort Order:</label>
-            <select class="form-control" id="sortOrder">
-              <option>Ascending</option>
-              <option>Descending</option>
+            <select [(ngModel)]="order" (change)="sort()" class="form-control" id="sortOrder">
+              <option value="asc" >Ascending</option>
+              <option value="desc" >Descending</option>
             </select>
           </div>
-          <button class="btn btn-primary">Apply Sort</button>
-        </div>
+             </div>
       </div>
     </div>
 

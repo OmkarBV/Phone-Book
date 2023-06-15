@@ -19,4 +19,12 @@ export class HomeService {
       this.baseURL + 'searchbynumber/' + email + '/' + number
     );
   }
+
+  sortASC(email: any) {
+    return this.http.get(this.baseURL + 'sortasc/' + email);
+  }
+
+  sortDESC(email: any) {
+    return this.http.get(this.baseURL + 'sortdesc/' + email);
+  }
 }

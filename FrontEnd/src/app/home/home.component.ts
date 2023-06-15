@@ -8,6 +8,7 @@ import { HomeService } from '../utility/home.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  order: string = '';
   email = '';
   user = {
     name: '',
@@ -65,5 +66,23 @@ export class HomeComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  sort() {
+    if (this.order === 'asc') {
+      this.sortASC();
+    } else if (this.order === 'desc') {
+      this.sortDESC();
+    }
+  }
+  sortASC() {
+    this.service.sortASC(this.email).subscribe((responce:any) => {
+      this.user=responce
+    });
+  }
+  sortDESC() {
+    this.service.sortDESC(this.email).subscribe((responce:any) => {
+      this.user=responce
+    });
   }
 }

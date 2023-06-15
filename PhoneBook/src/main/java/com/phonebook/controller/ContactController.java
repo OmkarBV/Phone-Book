@@ -16,18 +16,28 @@ import com.phonebook.service.ContactService;
 public class ContactController {
 	@Autowired
 	ContactService service;
-	
+
 	@GetMapping("/getall/{email}")
 	public User getAllContact(@PathVariable String email) {
 		return service.getAllContact(email);
 	}
-	
+
 	@GetMapping("searchbyname/{email}/{name}")
 	public User searchByName(@PathVariable String email, @PathVariable String name) {
-		return service.searchByName(email,name);
+		return service.searchByName(email, name);
 	}
+
 	@GetMapping("searchbynumber/{email}/{number}")
 	public User searchByNumber(@PathVariable String email, @PathVariable String number) {
-		return service.searchByNumber(email,number);
+		return service.searchByNumber(email, number);
+	}
+
+	@GetMapping("sortasc/{email}")
+	public User sortContactASC(@PathVariable String email) {
+		return service.sortContactASC(email);
+	}
+	@GetMapping("sortdesc/{email}")
+	public User sortContactDESC(@PathVariable String email) {
+		return service.sortContactDESC(email);
 	}
 }

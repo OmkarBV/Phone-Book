@@ -1,6 +1,7 @@
 package com.phonebook.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +43,17 @@ public class ContactService {
 			}
 		}
 		user.setContact(cl);
+		return user;
+	}
+
+	public User sortContactASC(String email) {
+		User user = dao.getAllContact(email);
+		Collections.sort(user.getContact(), (o1, o2) -> o1.getName().compareTo(o2.getName()));
+		return user;
+	}
+	public User sortContactDESC(String email) {
+		User user = dao.getAllContact(email);
+		Collections.sort(user.getContact(), (o1, o2) -> o2.getName().compareTo(o1.getName()));
 		return user;
 	}
 }
